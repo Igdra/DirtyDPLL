@@ -5,13 +5,14 @@ Literals are hardcoded.\
 Add literals to Literals[][], compile and run.\
 This implementation runs for the full tree, and doesn't stop on true, so it can return the number of nodes in the DPLL tree.\
 DPLL overloads:
->
-DPLL.runDPLL(clauselist);\
-DPLLL.runDPLL(clauselist, boolean verbosity);\
-DPLL.runDPLL(clauselist, int verbosityLevel);   // 1-3\
+```java
+DPLL.runDPLL(clauselist);
+DPLLL.runDPLL(clauselist, boolean verbosity);
+DPLL.runDPLL(clauselist, int verbosityLevel);   // 1-3
+```
 
 Algorithm:
->
+```
 if (emptySet) return true\
 if (hasEmptyClause)  return false\
 if for some literal l, {l} is an element of Set then\
@@ -25,7 +26,7 @@ if for some literal l element of Set
     // IF MULTIPLE APPLIES, GET FIRST IN LEXICOGRAPHICAL ORDER
 get first literal in lexicographical order and return
     Set where l=1 ̛AND Set where l=0
-
+```
 The use of AND in the final route is specifically so all nodes are visited.
 
 
