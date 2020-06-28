@@ -1,6 +1,6 @@
 public class Literal {
     char id;
-    boolean isPositive;    // pozitiv literal
+    boolean isPositive;    // pozitive literal  // currently not used
 //    Literal complement;
 
     Literal(char id, boolean isPozitive) {

@@ -5,18 +5,26 @@ public class Main {
 //        String clauseString = "{ {p, -r, s}, {s}, {-p,-q}, {-p, q, -r}, {-p, q} }";
 
         // Write your literals here
-        // Literal.
+        // Literal.p
+        // Literal.notP
+        // Literal.q
+        // Literal.notQ
+        // Literal.r
+        // Literal.notR
+        // Literal.s
+        // Literal.notS
         Literal[][] clauseList = {
-                {Literal.p, Literal.notR, Literal.s},
-                {Literal.s},
+                {Literal.p, Literal.r},
+                {Literal.p, Literal.notR, Literal.notS},
+                {Literal.p, Literal.notQ},
                 {Literal.notP, Literal.notQ},
-                {Literal.notP, Literal.q, Literal.notR},
-                {Literal.notP, Literal.q}
+                {Literal.notQ, Literal.notS},
+                {Literal.q, Literal.notR}
         };
 
         Clauselist clauselist = new Clauselist(clauseList);
 
-        // run DPLL and write out how many times it ran
+        // run DPLL and write out number of iterations (nodes)
         DPLL.runDPLL(clauselist);
         System.out.println("Node count: " + DPLL.getNodeCount());
 
