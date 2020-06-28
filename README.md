@@ -8,6 +8,26 @@ This implementation runs for the full tree, and doesn't stop on true, so it can 
 
 Add literals to Literals[][], compile and run.
 
+## Usage Example
+`{{p, r}, {p, -r, -s}, {p, -q}, {-p, -q}, {-q, -s}, {q, -r}}`
+#### Main.java
+```Java
+Literal[][] clauseList = {
+        {Literal.p, Literal.r},
+        {Literal.p, Literal.notR, Literal.notS},
+        {Literal.p, Literal.notQ},
+        {Literal.notP, Literal.notQ},
+        {Literal.notQ, Literal.notS},
+        {Literal.q, Literal.notR}
+};
+```
+#### Output
+```Java
+True
+False
+Node count: 8
+```
+
 DPLL overloads:
 ```java
 DPLL.runDPLL(clauselist);
@@ -17,7 +37,7 @@ DPLL.runDPLL(clauselist, int verbosityLevel);   // 1-3
 
 ### Recursive algorithm pseudocode:
 ```java
-runDPLL(set) {
+runDPLL(Set) {
     if (emptySet) return true
     if (hasEmptyClause)  return false
     if for some literal l, {l} is an element of Set then
@@ -27,8 +47,8 @@ runDPLL(set) {
         if -l is not element of Set
             runDPLL( Set where l=1 )
         // IF MULTIPLE APPLIES, GET FIRST IN LEXICOGRAPHICAL ORDER
-    get first literal in lexicographical order and return
-        runDPLL( Set where l=1 ) AND runDPLL( Set where l=0 )
+    get first literal in lexicographical order 
+        return runDPLL( Set where l=1 ) AND runDPLL( Set where l=0 )
 }
 ```
 The use of AND in the final route is specifically so all nodes are visited.
