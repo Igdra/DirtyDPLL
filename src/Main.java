@@ -4,7 +4,7 @@ public class Main {
         // possibly implement string to clauseList conversion
 //        String clauseString = "{ {p, -r, s}, {s}, {-p,-q}, {-p, q, -r}, {-p, q} }";
 
-        // Write your literals here
+        // Literals:
         // Literal.p
         // Literal.notP
         // Literal.q
@@ -14,6 +14,7 @@ public class Main {
         // Literal.s
         // Literal.notS
         Literal[][] clauseList = {
+                // Write your literals here
                 {Literal.p, Literal.r},
                 {Literal.p, Literal.notR, Literal.notS},
                 {Literal.p, Literal.notQ},

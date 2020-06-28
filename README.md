@@ -7,7 +7,7 @@ This implementation runs for the full tree, and doesn't stop on true, so it can 
 DPLL overloads:
 ```java
 DPLL.runDPLL(clauselist);
-DPLLL.runDPLL(clauselist, boolean verbosity);
+DPLL.runDPLL(clauselist, boolean verbosity);
 DPLL.runDPLL(clauselist, int verbosityLevel);   // 1-3
 ```
 
