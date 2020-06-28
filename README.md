@@ -6,9 +6,9 @@ Add literals to Literals[][], compile and run.\
 This implementation runs for the full tree, and doesn't stop on true, so it can return the number of nodes in the DPLL tree.\
 DPLL overloads:
 >
-DPLL.runDPLL(clauselist);
-DPLLL.runDPLL(clauselist, boolean verbosity);
-DPLL.runDPLL(clauselist, int verbosityLevel);   // 1-3
+DPLL.runDPLL(clauselist);\
+DPLLL.runDPLL(clauselist, boolean verbosity);\
+DPLL.runDPLL(clauselist, int verbosityLevel);   // 1-3\
 
 Algorithm:
 >
